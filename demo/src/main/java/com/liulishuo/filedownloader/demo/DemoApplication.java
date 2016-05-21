@@ -6,6 +6,7 @@ import android.content.Context;
 import com.liulishuo.filedownloader.FileDownloader;
 import com.liulishuo.filedownloader.util.FileDownloadHelper;
 import com.liulishuo.filedownloader.util.FileDownloadLog;
+import com.squareup.leakcanary.LeakCanary;
 
 import java.net.Proxy;
 import java.util.concurrent.TimeUnit;
@@ -21,6 +22,8 @@ public class DemoApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        LeakCanary.install(this);
+
         // for demo.
         CONTEXT = this;
 
